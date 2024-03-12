@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/update">
+
+<table width="200" border="0">
+  <tr>
+    <th scope="row">NAME</th>
+    <td><label for="textfield"></label>
+    <input type="text" name="textfield" id="textfield" value="{{val[1]}}" /></td>
+  </tr>
+  <tr>
+    <th scope="row">AGE</th>
+    <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" value="{{val[2]}}" /></td>
+  </tr>
+  <tr>
+    <th scope="row">PHONE</th>
+    <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" value="{{val[3]}}"/></td>
+  </tr>
+  <tr>
+    <th scope="row">ADDRESS</th>
+    <td><label for="textfield4"></label>
+     <textarea name="textarea" id="textarea">{{val[4]}}</textarea></td>
+  </tr>
+  <tr>
+    <th scope="row">EMAIL</th>
+    <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" value="{{val[7]}}"/></td>
+  </tr>
+  <tr>
+    <th scope="row">GENDER</th>
+    <td><input type="radio" name="GENDER" id="radio" value="male" {% if val[5]=="male"%}checked{%endif%}/>
+      <label for="radio">male
+        <input type="radio" name="GENDER" id="radio2" value="female" {% if val[5]=="female"%}checked{%endif%} />
+      female</label></td>
+  </tr>
+  <tr>
+    <th scope="row">QUALIFICATION</th>
+    <td><input type="checkbox" name="qualification" id="checkbox" value="SSLC" {% if "SSLC" in val[6]%}checked{%endif%}/>
+      <label for="checkbox">SSLC<br/>
+      </label>
+      <input type="checkbox" name="qualification" id="checkbox2" value="PLUS TWO" {% if "PLUS TWO" in val[6]%}checked{%endif%}/>
+      <label for="checkbox2">PLUS TWO<br/>
+        <input type="checkbox" name="qualification" id="checkbox3" value="DEGREE" {% if "DEGREE" in val[6]%}checked{%endif%}/>
+      <label for="checkbox3">DEGREE</label></td>
+  </tr>
+  <tr>
+    <th scope="row">LANGUAGE</th>
+    <td><label for="select"></label>
+      <select name="select" id="select">
+        <option {%if val[8]=="HINDI"%}selected{%endif%}>HINDI</option>
+        <option {%if val[8]=="ENGLISH"%}selected{%endif%}>ENGLISH</option>
+        <option {%if val[8]=="MALAYALAM"%}selected{%endif%}>MALAYALAM</option>
+        <option {%if val[8]=="TAMIL"%}selected{%endif%}>TAMIL</option>
+
+      </select></td>
+  </tr>
+  <tr>
+    <th><img src="/static/phot/{{val[10]}}" width="50" height="50"></th>
+    <td><a href="/changeimage">CHANGE IMAGE</a></td>
+  </tr>
+  <tr>
+    <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="UPDATE" /></th>
+  </tr>
+</table>
+</form>
+</body>
+</html>

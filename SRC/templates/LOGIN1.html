@@ -1,0 +1,31 @@
+
+
+
+{%extends 'index.html'%}
+{%block body%}
+<body>
+<form id="form1" name="form1" method="post" action="logincheck">
+  <br>
+  <br>
+  <br>
+  <table width="200" border="0" align="center">
+    <tr>
+      <th scope="row">USERNAME</th>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" /></td>
+    </tr>
+    <tr>
+      <th scope="row">PASSWORD</th>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" /></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="LOGIN" /></th>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><a href="/signup">SIGNUP</a></th>
+    </tr>
+  </table>
+</form>
+</body>
+{%endblock%}

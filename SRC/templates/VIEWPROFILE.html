@@ -1,0 +1,75 @@
+{% extends 'adminindex.html'%}
+{%block body%}
+<body>
+<form action="profileupdate" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="305" border="0">
+    <tr>
+      <th width="178" scope="row">NAME</th>
+      <td width="111"><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" required pattern="[A-Z a-z.]{3,25}" value="{{value[1]}}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">AGE</th>
+      <td><label for="textfield2"></label>
+      <input type="number" name="textfield2" id="textfield2" min="18" max="35" value="{{value[2]}}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">PHONE</th>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" required pattern="[6789][0-9]{9}" value="{{value[3]}}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">ADDRESS</th>
+      <td><label for="textarea"></label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5" >"{{value[4]}}"</textarea></td>
+    </tr>
+    <tr>
+      <th scope="row">EMAIL</th>
+      <td><label for="textfield4"></label>
+      <input type="email" name="textfield4" id="textfield4" placeholder="admin" value="{{value[7]}}" required /></td>
+    </tr>
+    <tr>
+      <th scope="row">GENDER</th>
+      <td><input type="radio" name="gender" id="radio" value="male" {% if value[5]=="male"%}checked{%endif%} />
+      <label for="radio">MALE 
+        <input type="radio" name="gender" id="radio2" value="female"{% if value[5]=="female"%}checked{%endif%} />
+      FEMALE</label></td>
+    </tr>
+    <tr>
+      <th scope="row">QUALIFICATION</th>
+      <td><input type="checkbox" name="qualification" id="checkbox" value="SSLC" {% if "SSLC" in value[6]%}checked{%endif%} />
+      <label for="checkbox">SSLC
+        <br />
+        <input type="checkbox" name="qualification" id="checkbox2" value="PLUS TWO" {% if "PLUS TWO" in value[6]%}checked{%endif%}/>
+      PLUS TWO
+      <br />
+      <input type="checkbox" name="qualification" id="checkbox3" value="DEGREE" checked {% if "DEGREE" in value[6]%}checked{%endif%}/>
+      DEGREE</label></td>
+    </tr>
+    <tr>
+      <th scope="row">LANGUAGE</th>
+      <td><label for="select"></label>
+        <select name="select" id="select">
+          <option {%if value[8]=="ENGLISH"%}selected{%endif%}>ENGLISH</option>
+          <option {%if value[8]=="MALAYALM"%}selected{%endif%}>MALAYALAM</option>
+          <option {%if value[8]=="HINDI"%}selected{%endif%}>HINDI</option>
+          <option {%if value[8]=="TAMIL"%}selected{%endif%}>TAMIL</option>
+      </select></td>
+    </tr>
+    <tr>
+      <th scope="row">PASSWORD</th>
+      <td><label for="textfield5"></label>
+      <input type="password" name="textfield5" id="textfield5"/></td>
+    </tr>
+    <tr>
+      <th scope="row">PHOTO</th>
+      <td><img src="/static/phot/{{value[10]}}" width="50" height="50">
+     <a href="/changeimg">UPDATEPROPIC</a>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="register" value="Update"></th>
+    </tr>
+  </table>
+</form>
+</body>
+{%endblock%}
